@@ -2,6 +2,7 @@
 <img width="1523" alt="Screenshot 2024-07-27 at 13 21 57" src="https://github.com/user-attachments/assets/01174593-158f-4504-a1a8-756f49b020b8">
 
 
+
 For the Script Activity **“Latest Processed Date”**
 
 ```sql
@@ -26,7 +27,8 @@ Pipeline expression for **v_date** Set Variable activity
 
 Pre Copy Script
 
-![Screenshot 2024-07-27 at 13.13.47.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/450b9bdd-84b1-4382-b4d1-e7644f764103/7cdfa1e8-a8c8-48ae-9658-bfbe9a092627/Screenshot_2024-07-27_at_13.13.47.png)
+<img width="512" alt="Screenshot 2024-07-27 at 13 22 39" src="https://github.com/user-attachments/assets/863b1d31-0366-4c4d-8ba7-466bb344d675">
+
 
 ---
 
