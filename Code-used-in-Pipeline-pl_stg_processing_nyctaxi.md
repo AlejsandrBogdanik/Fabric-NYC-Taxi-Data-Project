@@ -53,7 +53,8 @@ as
 delete from stg.nyc_taxi_yellow where tpep_pickup_datetime < @start_date or tpep_pickup_datetime > @end_date;
 ```
 
-![Screenshot 2024-07-27 at 13.12.55.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/450b9bdd-84b1-4382-b4d1-e7644f764103/22bc1819-f883-4323-9516-48a6e28ed0dd/Screenshot_2024-07-27_at_13.12.55.png)
+<img width="701" alt="Screenshot 2024-07-27 at 13 26 43" src="https://github.com/user-attachments/assets/618f1a1e-6bf8-481f-9be5-02ca7012e3c0">
+
 
 ---
 
