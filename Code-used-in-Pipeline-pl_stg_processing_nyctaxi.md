@@ -32,6 +32,15 @@ Pre Copy Script
 
 ---
 
+Pipeline expression for **v_end_date** Set Variable activity
+
+```sql
+@addToTime(concat(variables('v_date'), '-01'),1,'Month')
+```
+
+---
+
+
 For the Stored Procedure Activity **“SP Removing Outlier Dates”.**
 
 Created the Stored Procedure **stg.data_cleaning_stg** in the Data Warehouse using the code below.
@@ -44,7 +53,7 @@ as
 delete from stg.nyc_taxi_yellow where tpep_pickup_datetime < @start_date or tpep_pickup_datetime > @end_date;
 ```
 
-![Screenshot 2024-07-27 at 13.12.29.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/450b9bdd-84b1-4382-b4d1-e7644f764103/f12d9be5-16a1-44bb-bc3e-63e27e57a5c5/Screenshot_2024-07-27_at_13.12.29.png)
+![Screenshot 2024-07-27 at 13.12.55.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/450b9bdd-84b1-4382-b4d1-e7644f764103/22bc1819-f883-4323-9516-48a6e28ed0dd/Screenshot_2024-07-27_at_13.12.55.png)
 
 ---
 
@@ -81,4 +90,5 @@ AS
     FROM stg.nyc_taxi_yellow;
 ```
 
-![Screenshot 2024-07-27 at 13.12.55.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/450b9bdd-84b1-4382-b4d1-e7644f764103/22bc1819-f883-4323-9516-48a6e28ed0dd/Screenshot_2024-07-27_at_13.12.55.png)
+<img width="704" alt="Screenshot 2024-07-27 at 13 26 01" src="https://github.com/user-attachments/assets/aa105b76-ec9b-4488-827a-18de867ec481">
+
