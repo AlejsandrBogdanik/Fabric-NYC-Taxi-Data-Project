@@ -1,4 +1,6 @@
-![Screenshot 2024-07-27 at 13.05.30.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/450b9bdd-84b1-4382-b4d1-e7644f764103/f026b6b8-05f2-4edb-a907-75a45e988fe0/Screenshot_2024-07-27_at_13.05.30.png)
+
+<img width="1523" alt="Screenshot 2024-07-27 at 13 21 57" src="https://github.com/user-attachments/assets/01174593-158f-4504-a1a8-756f49b020b8">
+
 
 For the Script Activity **“Latest Processed Date”**
 
