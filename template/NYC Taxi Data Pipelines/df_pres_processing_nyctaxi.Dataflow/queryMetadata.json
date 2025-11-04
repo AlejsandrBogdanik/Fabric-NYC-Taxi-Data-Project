@@ -1,0 +1,20 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "df_pres_processing_nyctaxi",
+  "queryGroups": [],
+  "documentLocale": "uk-UA",
+  "queriesMetadata": {
+    "stg nyctaxi_yellow": {
+      "queryId": "87bf6000-79e7-4383-9ccb-7518a40e512b",
+      "queryName": "stg nyctaxi_yellow"
+    }
+  },
+  "connections": [
+    {
+      "path": "Warehouse",
+      "kind": "Warehouse",
+      "connectionId": "{\"ClusterId\":\"45424648-86de-41c7-abcb-4c4b7202201c\",\"DatasourceId\":\"6b947d79-a722-40ac-9c7b-5aaf4e5e8f37\"}"
+    }
+  ]
+}
