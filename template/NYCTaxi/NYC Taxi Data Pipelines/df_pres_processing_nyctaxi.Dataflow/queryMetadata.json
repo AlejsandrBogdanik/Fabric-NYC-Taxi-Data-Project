@@ -8,6 +8,17 @@
     "stg nyctaxi_yellow": {
       "queryId": "87bf6000-79e7-4383-9ccb-7518a40e512b",
       "queryName": "stg nyctaxi_yellow"
+    },
+    "stg taxi_zone_lookup": {
+      "queryId": "19a5c51f-c53f-4331-b871-bd81c4d31c45",
+      "queryName": "stg taxi_zone_lookup",
+      "loadEnabled": false
+    },
+    "stg nyctaxi_yellow_DataDestination": {
+      "queryId": "a9f127f8-e027-4299-b9e6-861f31e63e1c",
+      "queryName": "stg nyctaxi_yellow_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
     }
   },
   "connections": [

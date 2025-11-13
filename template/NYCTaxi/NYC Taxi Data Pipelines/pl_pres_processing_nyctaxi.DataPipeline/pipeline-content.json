@@ -1,0 +1,119 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Process to Presentation",
+        "type": "RefreshDataflow",
+        "state": "Inactive",
+        "onInactiveMarkAs": "Succeeded",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "dataflowId": "0bee9643-ace5-4614-bec2-86496f3e06de",
+          "workspaceId": "298604c0-147d-4376-aa69-eb45754f28df",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric"
+        }
+      },
+      {
+        "name": "SP Loading Presentation Metadata",
+        "type": "SqlServerStoredProcedure",
+        "dependsOn": [
+          {
+            "activity": "Process to Presentation",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "SP Process to Presentation",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "storedProcedureName": "[metadata].[insert_presentation_metadata]",
+          "storedProcedureParameters": {
+            "pipeline_run_id": {
+              "value": {
+                "value": "@pipeline().RunId",
+                "type": "Expression"
+              },
+              "type": "String"
+            },
+            "processed_date": {
+              "value": {
+                "value": "@pipeline().TriggerTime",
+                "type": "Expression"
+              },
+              "type": "DateTime"
+            },
+            "table_name": {
+              "value": "presentation_nyctaxi_yellow",
+              "type": "String"
+            }
+          }
+        },
+        "connectionSettings": {
+          "name": "ProjectWarehouse",
+          "properties": {
+            "annotations": [],
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "endpoint": "gtr47f5jy7hubctovfhjn6j3ea-yacimkl5cr3ehktj5ncxktzi34.datawarehouse.fabric.microsoft.com",
+              "artifactId": "fc6b09fd-3e52-4385-b51b-a23a0ed3ad1b",
+              "workspaceId": "298604c0-147d-4376-aa69-eb45754f28df"
+            },
+            "externalReferences": {
+              "connection": "6b947d79-a722-40ac-9c7b-5aaf4e5e8f37"
+            }
+          }
+        }
+      },
+      {
+        "name": "SP Process to Presentation",
+        "type": "SqlServerStoredProcedure",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "storedProcedureName": "[dbo].[process_presentation]"
+        },
+        "connectionSettings": {
+          "name": "ProjectWarehouse",
+          "properties": {
+            "annotations": [],
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "endpoint": "gtr47f5jy7hubctovfhjn6j3ea-yacimkl5cr3ehktj5ncxktzi34.datawarehouse.fabric.microsoft.com",
+              "artifactId": "fc6b09fd-3e52-4385-b51b-a23a0ed3ad1b",
+              "workspaceId": "298604c0-147d-4376-aa69-eb45754f28df"
+            },
+            "externalReferences": {
+              "connection": "6b947d79-a722-40ac-9c7b-5aaf4e5e8f37"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
